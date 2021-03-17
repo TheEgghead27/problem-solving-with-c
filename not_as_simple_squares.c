@@ -5,12 +5,12 @@
 main() 
 {
 	int number, sqnumber;
-	for (number = 4; number <= 9; number = number + 1) {
+	for (number = 4; number <= 9; number = number++) {
 		sqnumber =  number * number;
 		printf("%d %d\n", number, sqnumber);
 	};
 	printf("******");
-	for (number = 9; number >= 4; number = number - 1) {
+	for (number = 9; number >= 4; number = number--) {
 		sqnumber = number * number;
 		printf("%d %d\n", number, sqnumber);
 	};
