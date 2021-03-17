@@ -9,4 +9,9 @@ main()
 		sqnumber =  number * number;
 		printf("%d %d\n", number, sqnumber);
 	};
+	printf("******");
+	for (number = 9; number >= 4; number = number - 1) {
+		sqnumber = number * number;
+		printf("%d %d\n", number, sqnumber);
+	};
 };
