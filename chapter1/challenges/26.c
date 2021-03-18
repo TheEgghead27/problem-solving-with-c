@@ -1,0 +1,1 @@
+/* ok no im not writing pseudocode for this stuff at 8:41 PM i only do that at 9:57 PM when im trying to sleep */
