@@ -7,13 +7,15 @@
 #include <stdio.h>
 
 int main(void) {
+	printf("Table of Function Values\n\n");
+	printf("Grade Point Average\tValue of Formula\tStatus\n\n");
 	double gpa, result;
 	for (gpa = 0.00; gpa <= 4.00; gpa += 0.50) {
 		result = (gpa * gpa * gpa + 7 * gpa - 1) / (gpa * gpa - (gpa + 5) / 3);
-		printf("%f   %f\n", gpa, result);	
+		printf("\t%f\t%f\t", gpa, result);	
 		if (result >= 0)
-			printf(" Admit\n");  // ok nvm c isnt indent based you dummy the scope is just up to the next semicolon
-		printf("ok\n");
+			printf("\tAdmit");  // ok nvm c isnt indent based you dummy the scope is just up to the next semicolon
+		printf("\n");
 	};
-	printf("The table is finished\n");
+	printf("\nThe table is finished\n");
 };
