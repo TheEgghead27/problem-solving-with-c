@@ -1,5 +1,6 @@
 /.vs
 /build
 *.obj
+*.exe
 a.out
 test.c
