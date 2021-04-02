@@ -23,10 +23,7 @@ int main(void) {
 		printf("Enter the rate of pay> ");
 		scanf("%lf", &rate);
 		pay = hours * rate;
-		if (pay < 300)
-			tax = 0.15 * pay;
-		else
-			tax = 0.28 * pay;
+		tax = (pay < 300) ? (0.15 * pay) : (0.28 * pay);
 		netpay = pay - tax;
 
 		printf("Employee %d worked %4.1f hours ", id, hours);
