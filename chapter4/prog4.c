@@ -15,5 +15,9 @@ int main(void) {
 
 	for (item = 1; item <= numbertosum; item++)
 		sum += item * item;
-	printf("%d is the sum of the first %d squares\n", sum, numbertosum);
+	if (numbertosum != 1 || (numbertosum * (numbertosum + 1) * ((2 * numbertosum) + 1) / 6) == sum)
+		printf("%d is the sum of the first %d squares\n", sum, numbertosum);
+	else
+		printf("Sum check failed!");
+		
 }
