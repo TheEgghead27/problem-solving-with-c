@@ -9,6 +9,7 @@
 int main(void) {
 	int i, n;
 	
+	srand(69);
 	for (i = 1; i <= 10; i++) {
 		n = rand();
 		printf("%d\n", n);
