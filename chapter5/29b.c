@@ -7,15 +7,15 @@ int factorial(int number);
 
 
 int main(void) {
-	int n, output;
-	int i, number;
+	int n;
+	int output = 1;
+	int number;
 
 	printf("Enter a number you want to find the factorial of and the factorials of the numbers before: ");
 	scanf("%d", &n);
 
 	for (number = 1; number <= n; number++) {
-		for (i = 2, output = 1; i <= number; i++)
-			output *= i;
+		output *= number; 	
 		printf("%d\t%d.\n", number, output);
 	}
 }
