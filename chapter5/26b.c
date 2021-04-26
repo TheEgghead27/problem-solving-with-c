@@ -18,11 +18,18 @@ int main(void) {
 void printsumofproperdivisors(int number) {
 	int i, sum = 0;
 
-	printf("Divisors of %d\t\t", number);
 	for (i = 1; i <= (number / 2); i++) {
 		if ((number % i) == 0)
 			sum += i;
 	}
-	printf("%d", sum);
+
+	printf("%d is a(n) ", number);
+	if (sum == number)
+		printf("Perfect");
+	else if (sum < number)
+		printf("Abundant");
+	else
+		printf("Deficient");
+	printf(" number.\n");
 	return;
 }

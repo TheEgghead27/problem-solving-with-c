@@ -5,24 +5,25 @@
  * Divisors of 15		1	3	5	15
  */
 #include <stdio.h>
-void printsumofproperdivisors(int number);
+void printalldivisors(int number);
 
 
 int main(void) {
-	int i = 128;
+	int i;
 	
-	printsumofproperdivisors(i);
+	for (i = 1; i <= 40; i++)
+		printalldivisors(i);
 }
 
 
-void printsumofproperdivisors(int number) {
-	int i, sum = 0;
+void printalldivisors(int number) {
+	int i;
 
 	printf("Divisors of %d\t\t", number);
 	for (i = 1; i <= (number / 2); i++) {
 		if ((number % i) == 0)
-			sum += i;
+			printf("%d\t", i);
 	}
-	printf("%d", sum);
+	printf("%d\n", number);
 	return;
 }
