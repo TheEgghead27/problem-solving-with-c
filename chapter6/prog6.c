@@ -78,5 +78,38 @@ void translate(int month) {
 		case(1):
 			printf("January");
 			break;
+		case(1):
+			printf("January");
+			break;
+		case(1):
+			printf("January");
+			break;
+		case(1):
+			printf("January");
+			break;
+		case(1):
+			printf("January");
+			break;
+		case(1):
+			printf("January");
+			break;
+		case(1):
+			printf("January");
+			break;
+		case(1):
+			printf("January");
+			break;
+		case(1):
+			printf("January");
+			break;
+		case(1):
+			printf("January");
+			break;
+		case(1):
+			printf("January");
+			break;
+		case(1):
+			printf("January");
+			break;
 	}
 }
