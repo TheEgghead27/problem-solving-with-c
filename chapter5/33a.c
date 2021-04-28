@@ -12,13 +12,15 @@ int randRange(int lower, int upper);
 
 
 int main(void) {
-	int i, number;
+	int i, number, evens = 0;
 	
-	printf("Enter the number of die tosses to run> ")
+	printf("Enter the number of die tosses to run> ");
 	scanf("%d", &number);
 	for (i = 1; i <= number; i++) {
-		if ((randRange(1, 6) % 2));
+		if ((randRange(1, 6) % 2) == 0)
+			evens += 1;
 	}
+	printf("Out of %d die tosses, %d were even.", number, evens);
 }
 
 // stolen from geeksforgeeks
