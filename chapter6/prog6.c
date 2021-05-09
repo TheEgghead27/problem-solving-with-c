@@ -28,7 +28,7 @@ int main(void) {
 		printf("\n\nType y to continue; n to stop> ");
 		// space so it doesn't read newline as char
 		scanf(" %c", &answer);
-	} while (answer != "n"); 
+	} while (answer != 'n');  // why am i getting warnings here
 }
 
 
@@ -55,7 +55,7 @@ void classify(int month, int day) {
 		whichseason(month);
 	}
 
-	if (day < 1) || (day > 31)
+	if (day < 1 || day > 31)
 		printf("\n%d is an illegal value for the day", day);
 	else
 		whichweek(day);
@@ -78,38 +78,104 @@ void translate(int month) {
 		case(1):
 			printf("January");
 			break;
-		case(1):
-			printf("January");
+		case(2):
+			printf("February");
 			break;
-		case(1):
-			printf("January");
+		case(3):
+			printf("March");
 			break;
-		case(1):
-			printf("January");
+		case(4):
+			printf("April");
 			break;
-		case(1):
-			printf("January");
+		case(5):
+			printf("May");
 			break;
-		case(1):
-			printf("January");
+		case(6):
+			printf("June");
 			break;
-		case(1):
-			printf("January");
+		case(7):
+			printf("July");
 			break;
-		case(1):
-			printf("January");
+		case(8):
+			printf("August");
 			break;
-		case(1):
-			printf("January");
+		case(9):
+			printf("September");
 			break;
-		case(1):
-			printf("January");
+		case(10):
+			printf("October");
 			break;
-		case(1):
-			printf("January");
+		case(11):
+			printf("November");
 			break;
-		case(1):
-			printf("January");
+		case(12):
+			printf("December");
 			break;
 	}
+	return;
 }
+
+
+/*
+ * Function whichseason:
+ * Input:
+ * 	month--a number specifying a month in the year
+ * Process:
+ * 	determines which season month is in
+ * 	 (winter, spring, summer, fall)
+ * 	assume winter is December, January, February
+ * 	 (make similar assumptions for the other seasons)
+ * 	illegal data values for month will be caught
+ * Output:
+ * 	prints the name of the season
+ */
+void whichseason(int month) {
+	switch(month) {
+		case(12):
+		case(1):
+		case(2):
+			printf("\twinter is the season");
+			break;
+		case(3):
+		case(4):
+		case(5):
+			printf("\tspring is the season");
+			break;
+		case(6):
+		case(7):
+		case(8):
+			printf("\tsummer is the season");
+			break;
+		case(9):
+		case(10):
+		case(11):
+			printf("\tfall is the season");
+	}
+	return;
+}
+
+
+/*
+ * Function whichweek:
+ * Input:
+ * 	day--a number specifying a day in the month
+ * Process:
+ * 	determines which week of the month (1-5) day is in
+ * 	assume each week (except the fifth) has 7 days
+ * Output:
+ * 	prints the week within the month
+ */
+void whichweek(int day) {
+	if (day <= 7) 
+		printf("\t1 is the week number for day %d", day);
+	else if (day > 7 && day <= 14)
+		printf("\t2 is the week number for day %d", day);
+	else if (day > 14 && day <= 21)
+		printf("\t3 is the week number for day %d", day);
+	else if (day > 21 && day <= 28)
+		printf("\t4 is the week number for day %d", day);
+	else if (day > 28)
+		printf("\t5 is the week number for day %d", day);
+	return;
+}
+
