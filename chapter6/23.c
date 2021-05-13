@@ -9,6 +9,7 @@ int main(void) {
 		switch(number) {
 			case 2:
 				printf("\n%d is a prime number", number);
+				break;
 			case 4:
 			case 6:
 			case 8:
@@ -18,8 +19,10 @@ int main(void) {
 			case 5:
 			case 7:
 				printf("\n%d is a prime number", number);
+				break;
 			case 9:
 				printf("\n%d is an odd number", number);
+				break;
 		}
 	}
 }
