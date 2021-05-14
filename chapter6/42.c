@@ -8,16 +8,25 @@ int main(void) {
 	do {
 		printf("\nEnter the lowercase letter to classify> ");
 		scanf(" %c", &c);
-		if (c == 'b' || c == 'd')
-			type = 1;
-		else if (c == 'c' || c == 'j' || c == 'q')
-			type = 2;
-		else if (c == 'a')
-			type = 3;
-		else if (c == 'h' || (c >= 'r' && c <= 'z'))
-			type = 4;
-		else
-			type = 5;
+		switch(c) {
+			case 'b':
+			case 'd':
+				type = 1;
+				break;
+			case 'c':
+			case 'j':
+			case 'q':
+				type = 2;
+				break;
+			case 'a':
+				type = 3;
+				break;
+			default:
+				if (c == 'h' || (c >= 'r' && c <= 'z'))  // when the developer is lazy!
+					type = 4;
+				else
+					type = 5;
+		}
 		printf("\nLetter %c is type %d.", c, type);
 		printf("\nContinue? (Y/n)\n");
 		scanf(" %c", &yes);
