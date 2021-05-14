@@ -6,8 +6,13 @@ int main(void) {
 	int type;
 
 	do {
-		printf("\nEnter the lowercase letter to classify> ");
+		printf("\nEnter the letter to classify> ");
 		scanf(" %c", &c);
+		c = tolower(c);
+		if (! ('a' >= c && c <= 'c')) {
+			printf("\nInvalid value.");
+			continue;
+		}
 		switch(c) {
 			case 'b':
 			case 'd':
