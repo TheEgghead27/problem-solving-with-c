@@ -28,7 +28,9 @@ int main(void) {
 		printf("\n\nType y to continue; n to stop> ");
 		// space so it doesn't read newline as char
 		scanf(" %c", &answer);
-	} while (answer != 'n');  // why am i getting warnings here
+		answer = toupper(answer);
+		// or you can use tolower()
+	} while (answer != 'N');  // why am i getting warnings here
 }
 
 
