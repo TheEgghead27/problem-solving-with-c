@@ -1,3 +1,5 @@
 int nums[10];
 int nums[10] = {5, 11, -1, 17, 30, 6, 47, 48, 21, -32};
 // subscript here allocates array spaces
+
+double sales[3] = {123.45, 23456.78}; // you dont have to use all slots
