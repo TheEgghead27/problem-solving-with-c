@@ -9,22 +9,28 @@
 // int sumArray(int[], int);
 int sumArray(int num[], int n);
 double avgArray(int num[], int n);
-int readData(int[]);  // array parameters are treated like pointers, edits are applied always
+int readData(int []);  // array parameters are treated like pointers, edits are applied always
+int findMax(int [], int);
+void countMarks(int [], int, double);
 
 
 int main(void) {
 	// we do a little trolling
-	// int    n;
+	// int    higrade;
+	int	   n;
 	int	   mark[SIZE];
-	double avgmark;
+	double avgMark;
 
 	/* call functions to read and process the marks */
-	/*
-	 * n = readData(mark);
-	 * avgMark = ;
-	 * printf("The average is %6.2f\n", avgmark);
-	 */
-	printf("The average is %6.2f\n", avgArray(mark, readData(mark)));
+	n = readData(mark);
+	avgMark = avgArray(mark, n);
+	// printf("The average is %6.2f\n", avgmark);
+	printf("The average is %6.2f\n", avgMark);
+	// higrade = findMax(mark, n);
+	// printf("The highest mark is %d\n", higrade)
+	printf("The highest mark is %d\n", findMax(mark, n));
+	countMarks(mark, n, avgMark);
+
 }
 
 /*
@@ -95,4 +101,57 @@ int readData(int num[]) {
 		printf("%d\n", num[count]);
 	}
 	return n;
+}
+
+
+/*
+ * Function findMax:
+ * Input:
+ *	num: an array of integers
+ *	n: the number of elements in the array
+ * Process:
+ *	finds the highest value in the first
+ *	n elements of the array
+ * Output:
+ *	returns the maximum of the elements
+ */
+int findMax(int num[], int n) {
+	int largestSoFar, count;
+
+	largestSoFar = num[0];
+	for (count = 1; count < n; count++)
+		if (largestSoFar < num[count])
+			largestSoFar = num[count];  // this is legal
+	return largestSoFar;
+}
+
+
+/*
+ * Function countMarks
+ * Input:
+ *	num: an array of integers
+ *	n: the number of elements in the array
+ *	avgNum: the average of the elements in the array
+ * Process:
+ *	find how many grades in the array num are greater than avgnum
+ *	find how many grades in the array num are less than avgnum
+ *	find how many grades in the array num are equal to avgnum
+ * Output:
+ *	print numless, numgreater, and numequal
+ */
+void countMarks(int num[], int n, double avgNum) {
+	int count, numLess=0, numGreater=0, numEqual=0;
+
+	for (count = 0; count < n; count++)  // apparently its just legal to have all these if/elifs without {}
+		if (num[count] < avgNum)
+			numLess++;
+		else if (num[count] > avgNum)
+			numGreater++;
+		else
+			numEqual++;
+
+	printf("the number of marks less than the average is %d\n", numLess);
+	printf("the number of marks greater than the average is %d\n", numGreater);
+	printf("the number of marks equal to the average is %d\n", numEqual);
+	return;
 }
