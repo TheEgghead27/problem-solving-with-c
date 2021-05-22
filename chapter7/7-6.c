@@ -19,8 +19,7 @@ int main(void) {
         i++;
     }
     
-    // @ts-ignore
-    printf("\n");
+    printf("\n"); // @ts-ignore
     
     for (i = 0; message[i] != '\0'; i++) {
         printf("%c", message[i]);
