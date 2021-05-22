@@ -23,17 +23,23 @@ int main(void) {
 	}
 
 	/*
-	 * find average of n marks by adding
-	 * them to sum and dividing by n
+	 * read n marks into the mark array
+	 * and print each mark as it is read in
 	 */
 	for (count = 0; count < n; count++) {
 		printf("Enter a mark> ");
 		scanf("%d", &mark[count]);
 		printf("%d\n", mark[count]);
-		sum += mark[count];
 	}
 
+	/*
+	 * find average of n marks by adding
+	 * them to sum and dividing by n
+	 */
 	// use type casting to make a temp converted n to double for good division
+	sum = 0;
+	for (count = 0; count < n; count++)
+		sum += mark[count];
 	avgmark = sum / (double) n;
 	// you could try making the result double but that makes integer quotient
 	printf("The average is %6.2f\n", avgmark);
