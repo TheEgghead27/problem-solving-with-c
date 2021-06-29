@@ -12,5 +12,5 @@ int main(void) {
 	int stnum;
 
 	printf("How many students are in the class?> ");
-	scanf("%d", &class_size)
+	scanf("%d", &class_size);
 }

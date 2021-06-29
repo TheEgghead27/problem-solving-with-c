@@ -4,6 +4,7 @@
  * in terms of seasons and week
  */
 #include <stdio.h>
+#include <ctype.h>
 void classify(int, int);
 void translate(int);
 void whichseason(int);

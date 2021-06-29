@@ -1,9 +1,9 @@
 /* driver program to test printmaxmin */
 #include <stdio.h>
-void findmaxmin(int, int);
+void findmaxmin(int, int, int*, int*);
 
 int main(void) {
-	int a=1, b-2, larger, smaller;
+	int a=1, b=2, larger, smaller;
 	findmaxmin(a, b, &larger, &smaller);
 	printf("the larger is %d   and the smaller is %d\n", larger, smaller);
 }
@@ -25,10 +25,9 @@ void findmaxmin(int x, int y, int *max, int *min) {
 	if (x > y) {
 		*max = x;
 		*min = y;
-	};
+	}
 	else {
 		*max = y;
 		*min = x;
 	};
-	return;
 }
