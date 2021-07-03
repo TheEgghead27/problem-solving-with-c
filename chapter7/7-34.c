@@ -67,6 +67,7 @@ This function prints all customer information - account number and balance.
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #define MAX 255
 int read_accts(int acctnum_array[], double balance_array[], int max_elems);
 char menu(void);
@@ -153,9 +154,10 @@ int read_accts(int acctnum_array[], double balance_array[], int max_elems) {
 		}
 		
 		printf("\nContinue entering accounts? (Y/n)> ");
-		printf("\n scanf() returned %d", scanf(" %c", &answer));
-		printf("\nEntered %c", answer);
-		answer = tolower(answer);
+		// printf("\n scanf() returned %d", scanf(" %c ", &answer));
+        getchar();answer = getchar();
+		printf("answer is %c", answer);
+        answer = tolower(answer);
 		if (answer == 'n')
 			break;
 	}
@@ -168,7 +170,8 @@ char menu(void) {
 	char selection;
 
 	printf("\nSelect one of the following:\n\tW - Withdrawal\n\tD - Deposit\n\tN - New account\n\tB - Balance\n\tQ - Quit\n> ");
-	if (scanf(" %c", &selection) != 1) {
+    getchar();selection = getchar();
+	if (selection == ' ' || selection == '\n' || selection == '\t' || selection == EOF) {
 		fprintf(stderr, "\n\nNo character entered!\n");
 		return '0';
 	}
@@ -224,7 +227,6 @@ void deposit(int acctnum_array[], double balance_array[], int num_elems) {
 	printf("\nPlease enter the account number> ");
 	scanf("%d", &temp);
 	temp = findacct(acctnum_array, num_elems, temp);
-	printf("%d", temp);
 	if (temp != -1) {
 		printf("\nPlease enter the amount to deposit> ");
 		scanf("%d", &temp2);
