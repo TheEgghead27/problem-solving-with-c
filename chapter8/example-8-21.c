@@ -33,6 +33,7 @@ int main(void) {
     printf("The number of marks greater than the average is %d\n", greater);
     printf("The number of marks equal to the average is %d\n", equal);
 
+    return 0;
 }
 
 /*
